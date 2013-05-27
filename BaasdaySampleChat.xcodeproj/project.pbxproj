@@ -18,7 +18,7 @@
 		CAF38A081753F5D400D86822 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF38A071753F5D400D86822 /* Default-568h@2x.png */; };
 		CAF38A131753F64200D86822 /* BSCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF38A111753F64200D86822 /* BSCMainViewController.m */; };
 		CAF38A141753F64200D86822 /* BSCMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF38A121753F64200D86822 /* BSCMainViewController.xib */; };
-		CAF38A1C175407BE00D86822 /* baasday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF38A1B175407BE00D86822 /* baasday.framework */; };
+		CAF38A1E1754139000D86822 /* baasday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF38A1D1754139000D86822 /* baasday.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,7 @@
 		CAF38A101753F64200D86822 /* BSCMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCMainViewController.h; sourceTree = "<group>"; };
 		CAF38A111753F64200D86822 /* BSCMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCMainViewController.m; sourceTree = "<group>"; };
 		CAF38A121753F64200D86822 /* BSCMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSCMainViewController.xib; sourceTree = "<group>"; };
-		CAF38A1B175407BE00D86822 /* baasday.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = baasday.framework; sourceTree = "<group>"; };
+		CAF38A1D1754139000D86822 /* baasday.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = baasday.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 				CAF389F21753F5D300D86822 /* UIKit.framework in Frameworks */,
 				CAF389F41753F5D300D86822 /* Foundation.framework in Frameworks */,
 				CAF389F61753F5D300D86822 /* CoreGraphics.framework in Frameworks */,
-				CAF38A1C175407BE00D86822 /* baasday.framework in Frameworks */,
+				CAF38A1E1754139000D86822 /* baasday.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 				CAF389F71753F5D300D86822 /* BaasdaySampleChat */,
 				CAF389F01753F5D300D86822 /* Frameworks */,
 				CAF389EF1753F5D300D86822 /* Products */,
-				CAF38A1B175407BE00D86822 /* baasday.framework */,
+				CAF38A1D1754139000D86822 /* baasday.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -305,6 +305,7 @@
 				CAF38A0D1753F5D400D86822 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
