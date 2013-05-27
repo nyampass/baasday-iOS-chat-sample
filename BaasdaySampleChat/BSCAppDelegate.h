@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BSCMainViewController.h"
 
 @interface BSCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) BSCMainViewController *viewController;
 
 @end

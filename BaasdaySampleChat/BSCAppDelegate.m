@@ -7,14 +7,18 @@
 //
 
 #import "BSCAppDelegate.h"
+#import <baasday/baasday.h>
 
 @implementation BSCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[BDBaasday setApplicationId:@"APPLICATION ID" apiKey:@"APPLICATION API KEY"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+	self.viewController = [[BSCMainViewController alloc] init];
+	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
