@@ -39,7 +39,7 @@
 	}
 	BDQuery *query = [[BDQuery alloc] init];
 	query.order = @[[[BDFieldOrder alloc] initWithField:@"_createdAt" reversed:YES]];
-	if (_lastMessage) query.filter = @{@"_createdAt": @{@"$gt": [_lastMessage objectForKey:@"_createdAt"]}};
+	if (_lastMessage) query.filter = @{@"_createdAt": @{@"$gt": [_lastMessage dateForKey:@"_createdAt"]}};
 	query.wait = 30;
 	[BDObject fetchAllInBackgroundWithCollectionName:@"messages" query:query block:^(BDListResult *result, NSError *error) {
 		[self receivedMessages:result ? result.contents : nil];
