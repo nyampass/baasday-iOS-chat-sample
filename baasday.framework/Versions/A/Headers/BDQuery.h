@@ -11,10 +11,9 @@
 @interface BDFieldOrder : NSObject
 
 @property (nonatomic, assign) NSString *field;
-@property (nonatomic, assign) BOOL reversed;
-@property (readonly) NSString *parameterString;
+@property (nonatomic, assign) BOOL descending;
 
-- (id)initWithField:(NSString *)field reversed:(BOOL)reversed;
+- (id)initWithField:(NSString *)field descending:(BOOL)descending;
 - (id)initWithField:(NSString *)field;
 
 @end
@@ -31,6 +30,5 @@
 @property (readonly) BOOL hasLimit;
 @property (nonatomic, assign) NSInteger wait;
 @property (readonly) BOOL hasWait;
-@property (readonly) NSDictionary *apiRequestParameters;
 
 @end

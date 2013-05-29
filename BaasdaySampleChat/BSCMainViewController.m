@@ -38,11 +38,15 @@
 		_lastMessage = messages[0];
 	}
 	BDQuery *query = [[BDQuery alloc] init];
-	query.order = @[[[BDFieldOrder alloc] initWithField:@"_createdAt" reversed:YES]];
+	query.order = @[[[BDFieldOrder alloc] initWithField:@"_createdAt" descending:YES]];
 	if (_lastMessage) query.filter = @{@"_createdAt": @{@"$gt": [_lastMessage dateForKey:@"_createdAt"]}};
 	query.wait = 30;
-	[BDObject fetchAllInBackgroundWithCollectionName:@"messages" query:query block:^(BDListResult *result, NSError *error) {
-		[self receivedMessages:result ? result.contents : nil];
+	[BDItem fetchAllInBackgroundWithCollectionName:@"messages" query:query block:^(BDListResult *result, NSError *error) {
+		if (error) {
+			NSLog(@"baasday Error: %@", error);
+		} else {
+			[self receivedMessages:result ? result.contents : nil];
+		}
 	}];
 }
 
@@ -51,8 +55,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	BDQuery *query = [[BDQuery alloc] init];
-	query.order = @[[[BDFieldOrder alloc] initWithField:@"_createdAt" reversed:YES]];
-	[BDObject fetchAllInBackgroundWithCollectionName:@"messages" query:query block:^(BDListResult *result, NSError *error) {
+	query.order = @[[[BDFieldOrder alloc] initWithField:@"_createdAt" descending:YES]];
+	[BDItem fetchAllInBackgroundWithCollectionName:@"messages" query:query block:^(BDListResult *result, NSError *error) {
 		[self receivedMessages:result ? result.contents : nil];
 	}];
 }
@@ -80,7 +84,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-	BDObject *message = _messages[indexPath.row];
+	BDItem *message = _messages[indexPath.row];
 	cell.textLabel.text = [NSString stringWithFormat:@"%@", [message objectForKey:@"body"]];
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
@@ -89,12 +93,14 @@
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
-
 - (IBAction)sendMessage:(id)sender {
 	UITextField *textField = sender;
 	NSString *messageBody = textField.text;
 	if (messageBody.length > 0) {
-		[BDObject createInBackgroundWithCollectionName:@"messages" values:@{@"body": messageBody} block:^(BDObject *object, NSError *error) {
+		[BDItem createInBackgroundWithCollectionName:@"messages" values:@{@"body": messageBody} block:^(BDItem *message, NSError *error) {
+			if (error) {
+				NSLog(@"baasday error: %@", error);
+			}
 		}];
 	}
 	textField.text = @"";

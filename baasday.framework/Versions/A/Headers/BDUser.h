@@ -6,13 +6,16 @@
 //  Copyright (c) 2013年 Nyampass Corporation. All rights reserved.
 //
 
-#import "BDBasicObject.h"
+#import <Foundation/Foundation.h>
+#import "BDObject.h"
+#import "BDListResult.h"
+#import "BDQuery.h"
 
 @class BDUser;
 
 typedef void (^BDUserResultBlock)(BDUser *user, NSError *error);
 
-@interface BDUser : BDBasicObject
+@interface BDUser : BDObject
 
 + (BDUser *)createWithValues:(NSDictionary *)values error:(NSError **)error;
 + (BDUser *)createWithValues:(NSDictionary *)values;

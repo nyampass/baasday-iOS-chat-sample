@@ -1,39 +1,39 @@
 //
-//  BDBasicObject.h
+//  BDObject.h
 //  baasday
 //
-//  Created by Tokusei Noborio on 13/03/30.
+//  Created by Tokusei Noborio on 13/04/24.
 //  Copyright (c) 2013年 Nyampass Corporation. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-#import "BDBasicObject.h"
+@interface BDObject : NSObject
 
-@class BDObject;
+@property (readonly) NSDictionary *values;
+@property (readonly) NSString *id;
+@property (readonly) NSDate *createdAt;
+@property (readonly) NSDate *updatedAt;
 
-typedef void (^BDObjectResultBlock)(BDObject *object, NSError *error);
-
-@interface BDObject : BDBasicObject
-
-@property (nonatomic, strong) NSString* collectionName;
-
-- initWithCollectionName:(NSString *)collectionName values:(NSDictionary *)values;
-- initWithCollectionName:(NSString *)collectionName;
-+ (BDObject *)createWithCollectionName:(NSString *)collectionName values:(NSDictionary *)values error:(NSError **)error;
-+ (BDObject *)createWithCollectionName:(NSString *)collectionName values:(NSDictionary *)values;
-+ (BDObject *)createWithCollectionName:(NSString *)collectionName error:(NSError **)error;
-+ (BDObject *)createWithCollectionName:(NSString *)collectionName;
-+ (void)createInBackgroundWithCollectionName:(NSString *)collectionName values:(NSDictionary *)values block:(BDObjectResultBlock)block;
-+ (void)createInBackgroundWithCollectionName:(NSString *)collectionName block:(BDObjectResultBlock)block;
-+ (BDObject *)fetchWithCollectionName:(NSString *)collectionName id:(NSString *)id erorr:(NSError **)error;
-+ (BDObject *)fetchWithCollectionName:(NSString *)collectionName id:(NSString *)id;
-+ (void)fetchInBackgroundWithCollectionName:(NSString *)collectionName id:(NSString *)id block:(BDObjectResultBlock)block;
-+ (BDListResult *)fetchAllWithCollectionName:(NSString *)collectionName query:(BDQuery *)query error:(NSError **)error;
-+ (BDListResult *)fetchAllWithCollectionName:(NSString *)collectionName query:(BDQuery *)query;
-+ (BDListResult *)fetchAllWithCollectionName:(NSString *)collectionName error:(NSError **)error;
-+ (BDListResult *)fetchAllWIthCollectionName:(NSString *)collectionName;
-+ (void)fetchAllInBackgroundWithCollectionName:(NSString *)collectionName query:(BDQuery *)query block:(BDListResultBlock)block;
-+ (void)fetchAllInBackgroundWithCollectionName:(NSString *)collectionName block:(BDListResultBlock)block;
+- (id)initWithValues:(NSDictionary *)values;
+- (id)objectForKey:(NSString *)key;
+- (id)objectForKeyPath:(NSString *)keyPath;
+- (id)objectForKeyedSubscript:(NSString *)key;
+- (BOOL)containsKey:(NSString *)key;
+- (BOOL)isNil:(NSString *)key;
+- (NSInteger)integerForKey:(NSString *)key;
+- (NSInteger)integerForKeyPath:(NSString *)keyPath;
+- (double)doubleForKey:(NSString *)key;
+- (double)doubleForKeyPath:(NSString *)keyPath;
+- (BOOL)boolForKey:(NSString *)key;
+- (BOOL)boolForKeyPath:(NSString *)keyPath;
+- (NSDate *)dateForKey:(NSString *)key;
+- (NSDate *)dateForKeyPath:(NSString *)keyPath;
+- (BOOL)update:(NSDictionary *)values error:(NSError **)error;
+- (BOOL)update:(NSDictionary *)values;
+- (void)updateInBackground:(NSDictionary *)values block:(void(^)(id object, NSError *error))block;
+- (BOOL)deleteWithError:(NSError **)error;
+- (BOOL)delete;
+- (void)deleteInBackground:(void(^)(id object, NSError *error))block;
 
 @end

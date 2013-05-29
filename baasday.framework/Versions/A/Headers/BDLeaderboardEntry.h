@@ -6,14 +6,16 @@
 //  Copyright (c) 2013年 Nyampass Corporation. All rights reserved.
 //
 
-#import "BDBasicObject.h"
+#import <Foundation/Foundation.h>
+#import "BDObject.h"
 #import "BDListResult.h"
+#import "BDQuery.h"
 
 @class BDLeaderboardEntry;
 
 typedef void (^BDLeaderboardEntryResultBlock)(BDLeaderboardEntry *entry, NSError *error);
 
-@interface BDLeaderboardEntry : BDBasicObject
+@interface BDLeaderboardEntry : BDObject
 
 @property (nonatomic) NSString* leaderboardName;
 @property (readonly) NSInteger score;
