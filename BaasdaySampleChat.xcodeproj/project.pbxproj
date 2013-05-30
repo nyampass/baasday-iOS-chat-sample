@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA1AC3E91756D82E00EFC440 /* baasday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1AC3E81756D82E00EFC440 /* baasday.framework */; };
+		CA1AC3ED1756FA6000EFC440 /* baasday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1AC3EC1756FA6000EFC440 /* baasday.framework */; };
 		CAF389F21753F5D300D86822 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF389F11753F5D300D86822 /* UIKit.framework */; };
 		CAF389F41753F5D300D86822 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF389F31753F5D300D86822 /* Foundation.framework */; };
 		CAF389F61753F5D300D86822 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF389F51753F5D300D86822 /* CoreGraphics.framework */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CA1AC3E81756D82E00EFC440 /* baasday.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = baasday.framework; sourceTree = "<group>"; };
+		CA1AC3EC1756FA6000EFC440 /* baasday.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = baasday.framework; sourceTree = "<group>"; };
 		CAF389EE1753F5D300D86822 /* BaasdaySampleChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaasdaySampleChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF389F11753F5D300D86822 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CAF389F31753F5D300D86822 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,7 +49,7 @@
 				CAF389F21753F5D300D86822 /* UIKit.framework in Frameworks */,
 				CAF389F41753F5D300D86822 /* Foundation.framework in Frameworks */,
 				CAF389F61753F5D300D86822 /* CoreGraphics.framework in Frameworks */,
-				CA1AC3E91756D82E00EFC440 /* baasday.framework in Frameworks */,
+				CA1AC3ED1756FA6000EFC440 /* baasday.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 				CAF389F71753F5D300D86822 /* BaasdaySampleChat */,
 				CAF389F01753F5D300D86822 /* Frameworks */,
 				CAF389EF1753F5D300D86822 /* Products */,
-				CA1AC3E81756D82E00EFC440 /* baasday.framework */,
+				CA1AC3EC1756FA6000EFC440 /* baasday.framework */,
 			);
 			sourceTree = "<group>";
 		};
