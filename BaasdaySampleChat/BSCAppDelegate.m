@@ -14,7 +14,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	[BDBaasday setApplicationId:@"APPLICATION ID" apiKey:@"APPLICATION API KEY"];
-	[BDBaasday setApplicationId:@"PyHeS2f9JX4CrBH1b2PDicgSZxrzauzz" apiKey:@"RtWlkwRr7qBFhmGxAanQyZxmmAtZMXft"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
